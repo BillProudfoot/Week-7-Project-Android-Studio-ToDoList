@@ -12,9 +12,9 @@ public class TopToDos {
 
     public TopToDos (){
         list = new ArrayList<ToDo>();
-        list.add(new ToDo("wash floors", "Hall and kitchen floors to be vacuumed and washed"));
-        list.add(new ToDo("shopping", "Buy bread, milk and cheese"));
-        list.add(new ToDo("DIY", "fix shower in bathroom"));
+        list.add(new ToDo(1, "wash floors", "Hall and kitchen floors to be vacuumed and washed",R.drawable.chore));
+        list.add(new ToDo(2, "shopping", "Buy bread, milk and cheese",R.drawable.shopping));
+        list.add(new ToDo(3, "DIY", "fix shower in bathroom",R.drawable.diy));
 
     }
 
