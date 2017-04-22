@@ -18,6 +18,16 @@
         android:layout_height="wrap_content"
         android:weightSum="1">
 
+        <ImageView
+            android:id="@+id/category_art"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:textAlignment="center"
+            android:layout_weight="0.03"/>
+
+        </LinearLayout>
+
         <TextView
             android:id="@+id/todo"
             android:textSize="24dp"
@@ -34,7 +44,7 @@
             android:textSize="15dp"
             android:textStyle="italic"/>
 
-        
+
     </LinearLayout>
 
 </LinearLayout>
