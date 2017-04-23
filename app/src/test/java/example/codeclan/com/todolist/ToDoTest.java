@@ -28,7 +28,7 @@ public class ToDoTest {
 
     @Test
     public void getDetailTest(){
-        assertEquals(("Front hedge needs trimming", getDetailTest();));
+        assertEquals("Front hedge needs trimming", toDo.getDetail());
     }
-    
+
 }
