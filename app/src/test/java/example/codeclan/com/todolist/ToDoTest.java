@@ -21,5 +21,10 @@ public class ToDoTest {
         assertEquals((Integer)4, toDo.getPriority());
     }
 
-   
+    @Test
+    public void getToDoTest(){
+        assertEquals("Cut Hedge", toDo.getTodo());
+    }
+    
+
 }
