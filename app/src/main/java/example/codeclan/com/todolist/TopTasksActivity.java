@@ -9,18 +9,18 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class TopToDosActivity extends AppCompatActivity {
+public class TopTasksActivity extends AppCompatActivity {
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.todos_list);
+        setContentView(R.layout.tasks_list);
 
-        TopToDos topToDos = new TopToDos();
-        ArrayList<ToDo> list = topToDos.getList();
+        TopTasks topTasks = new TopTasks();
+        ArrayList<Task> list = topTasks.getList();
 
-        TopToDosAdapter toDosAdapter = new TopToDosAdapter(this, list);
+        TopTasksAdapter toDosAdapter = new TopTasksAdapter(this, list);
 
         final ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(toDosAdapter);
@@ -40,7 +40,7 @@ public class TopToDosActivity extends AppCompatActivity {
 
 
     public void getToDo(View listItem) {
-        ToDo toDo = (ToDo) listItem.getTag();
-        Log.d(" To Do : ", toDo.getTodo());
+        Task task = (Task) listItem.getTag();
+        Log.d(" To Do : ", task.getTodo());
     }
 }

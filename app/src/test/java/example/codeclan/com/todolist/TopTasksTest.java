@@ -8,11 +8,11 @@ import static junit.framework.Assert.assertEquals;
  * Created by user on 23/04/2017.
  */
 
-public class TopToDosTest {
+public class TopTasksTest {
 
     @Test
     public void getListTest(){
-        TopToDos topToDos = new TopToDos();
-        assertEquals(3, topToDos.getList().size());
+        TopTasks topTasks = new TopTasks();
+        assertEquals(3, topTasks.getList().size());
     }
 }

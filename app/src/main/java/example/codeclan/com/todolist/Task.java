@@ -4,14 +4,14 @@ package example.codeclan.com.todolist;
  * Created by user on 22/04/2017.
  */
 
-public class ToDo {
+public class Task {
 
     private int priority;
     private String todo;
     private String detail;
     private int image;
 
-    public ToDo( Integer priority, String todo, String detail, int image) {
+    public Task(Integer priority, String todo, String detail, int image) {
         this.priority = priority;
         this.todo = todo;
         this.detail = detail;

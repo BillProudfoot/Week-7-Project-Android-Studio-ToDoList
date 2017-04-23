@@ -9,26 +9,26 @@ import static junit.framework.Assert.assertEquals;
  * Created by user on 23/04/2017.
  */
 
-public class ToDoTest {
+public class TaskTest {
 
-    ToDo toDo;
+    Task task;
 
     @Before
-    public void before() { toDo = new ToDo(4,"Cut Hedge", "Front hedge needs trimming", R.drawable.chore);}
+    public void before() { task = new Task(4,"Cut Hedge", "Front hedge needs trimming", R.drawable.chore);}
 
     @Test
     public void getPriorityTest(){
-        assertEquals((Integer)4, toDo.getPriority());
+        assertEquals((Integer)4, task.getPriority());
     }
 
     @Test
     public void getToDoTest(){
-        assertEquals("Cut Hedge", toDo.getTodo());
+        assertEquals("Cut Hedge", task.getTodo());
     }
 
     @Test
     public void getDetailTest(){
-        assertEquals("Front hedge needs trimming", toDo.getDetail());
+        assertEquals("Front hedge needs trimming", task.getDetail());
     }
 
 }
