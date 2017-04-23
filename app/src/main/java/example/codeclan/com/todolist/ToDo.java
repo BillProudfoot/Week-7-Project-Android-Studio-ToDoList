@@ -11,11 +11,11 @@ public class ToDo {
     private String detail;
     private int image;
 
-    public ToDo( Integer priority, String todo, String detail, int image){
+    public ToDo( Integer priority, String todo, String detail, int image) {
         this.priority = priority;
         this.todo = todo;
         this.detail = detail;
-        this.image =image;
+        this.image = image;
     }
 
     public Integer getPriority(){return priority;}
