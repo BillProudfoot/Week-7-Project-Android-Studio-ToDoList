@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             detailTextToSave.setVisibility(View.INVISIBLE);
             saveButton.setVisibility(View.INVISIBLE);
             savedTaskText.setVisibility(View.VISIBLE);
-            savedTaskText.setTaskText(returnedTaskText);
+            savedTaskText.setVisibility(View.INVISIBLE);
             savedDetailText.setVisibility(View.VISIBLE);
             savedDetailText.setDetailText(returnedDetailText);
         }
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         detailTextToSave.setVisibility(View.INVISIBLE);
         saveButton.setVisibility(View.INVISIBLE);
         savedTaskText.setVisibility(View.VISIBLE);
-        savedTaskText.setTaskText(stringTextToSave);
+        savedTaskText.setVisibility(View.VISIBLE);
         savedDetailText.setVisibility(View.VISIBLE);
         savedDetailText.setDetailText(stringDetailToSave);
 

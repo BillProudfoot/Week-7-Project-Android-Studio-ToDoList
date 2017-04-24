@@ -7,19 +7,19 @@ package example.codeclan.com.todolist;
 public class Task {
 
     private int priority;
-    private String todo;
+    private String task;
     private String detail;
     private int image;
 
-    public Task(Integer priority, String todo, String detail, int image) {
+    public Task(Integer priority, String task, String detail, int image) {
         this.priority = priority;
-        this.todo = todo;
+        this.task = task;
         this.detail = detail;
         this.image = image;
     }
 
     public Integer getPriority(){return priority;}
-    public String getTodo() {return todo;}
+    public String getTask() {return task;}
     public String getDetail() {return detail;}
     public int getImage(){return image;}
 }

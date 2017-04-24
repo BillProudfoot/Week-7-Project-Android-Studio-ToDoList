@@ -39,8 +39,8 @@ public class TopTasksActivity extends AppCompatActivity {
 //    }
 
 
-    public void getToDo(View listItem) {
+    public void getTask(View listItem) {
         Task task = (Task) listItem.getTag();
-        Log.d(" To Do : ", task.getTodo());
+        Log.d(" To Do : ", task.getTask());
     }
 }

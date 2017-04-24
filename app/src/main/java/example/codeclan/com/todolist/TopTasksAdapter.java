@@ -17,8 +17,8 @@ import java.util.ArrayList;
 public class TopTasksAdapter extends ArrayAdapter<Task>{
 
 
-    public TopTasksAdapter(Context context, ArrayList<Task> todos){
-        super(context, 0, todos);
+    public TopTasksAdapter(Context context, ArrayList<Task> tasks){
+        super(context, 0, tasks);
     }
 
     @Override
@@ -33,8 +33,8 @@ public class TopTasksAdapter extends ArrayAdapter<Task>{
         TextView priority = (TextView) listItemView.findViewById(R.id.priority);
         priority.setText(currentTask.getPriority().toString());
 
-        TextView todo = (TextView) listItemView.findViewById(R.id.todo);
-        todo.setText(currentTask.getTodo().toString());
+        TextView task = (TextView) listItemView.findViewById(R.id.task);
+        task.setText(currentTask.getTask().toString());
 
         TextView detail = (TextView) listItemView.findViewById(R.id.detail);
         detail.setText(currentTask.getDetail().toString());
