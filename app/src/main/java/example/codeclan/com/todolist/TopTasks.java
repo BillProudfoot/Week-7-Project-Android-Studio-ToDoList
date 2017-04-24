@@ -19,4 +19,11 @@ public class TopTasks {
     }
 
     public ArrayList<Task> getList(){ return new ArrayList<Task>(list);}
+
+    /**
+     * Created by user on 24/04/2017.
+     */
+
+    public static class TasksActivity {
+    }
 }

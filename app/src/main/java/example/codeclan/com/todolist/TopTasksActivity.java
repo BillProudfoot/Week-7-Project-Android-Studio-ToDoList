@@ -1,11 +1,14 @@
 package example.codeclan.com.todolist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -17,8 +20,8 @@ public class TopTasksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tasks_list);
 
-        TopTasks topTasks = new TopTasks();
-        ArrayList<Task> list = topTasks.getList();
+
+        ArrayList<Task> list = SavedTextPreferences.getTasks(this);
 
         TopTasksAdapter toDosAdapter = new TopTasksAdapter(this, list);
 
@@ -42,5 +45,15 @@ public class TopTasksActivity extends AppCompatActivity {
     public void getTask(View listItem) {
         Task task = (Task) listItem.getTag();
         Log.d(" To Do : ", task.getTask());
+        Log.d(" Detail : ", task.getDetail());
+
+        Gson gson = new Gson();
+
+        String taskAsString = gson.toJson(task);
+
+        Intent intent = new Intent(this, TasksActivity.class); // UPDATED
+        intent.putExtra("task", taskAsString); // UPDATED
+
+        startActivity(intent); // UPDATED
     }
 }

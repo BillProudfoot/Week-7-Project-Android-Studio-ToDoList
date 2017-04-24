@@ -1,8 +1,8 @@
 package example.codeclan.com.todolist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         String returnedText = SavedTextPreferences.getStoredTaskText(this);
 
-        if (returnedText != null) {
+        /*if (returnedText != null) {
             taskTextToSave.setVisibility(View.INVISIBLE);
             detailTextToSave.setVisibility(View.INVISIBLE);
             saveButton.setVisibility(View.INVISIBLE);
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             savedTaskText.setText(returnedText);
             savedDetailText.setVisibility(View.VISIBLE);
             savedDetailText.setText(returnedText);
-        }
+        }*/
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -67,19 +67,27 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveButtonClick(View view) {
         String stringTextToSave = taskTextToSave.getText().toString();
         String stringDetailToSave = detailTextToSave.getText().toString();
-        Log.d(" ToDo List:", "Save Button Clicked!");
-        Log.d(" ToDo List:", " ToDo Task: ' " + taskTextToSave + "'");
-        Log.d(" ToDo List", "ToDo Detail: ' " + detailTextToSave + "'");
-        saveButton.setVisibility(View.INVISIBLE);
-        taskTextToSave.setVisibility(View.INVISIBLE);
-        detailTextToSave.setVisibility(View.INVISIBLE);
-        savedTaskText.setVisibility(View.VISIBLE);
-        savedTaskText.setText(stringTextToSave);
-        savedDetailText.setVisibility(View.VISIBLE);
-        savedDetailText.setText(stringDetailToSave);
 
-        SavedTextPreferences.setStoredTaskText(this, stringTextToSave);
-        SavedTextPreferences.setStoredTaskText(this, stringDetailToSave);
+        Task task = new Task(0 , stringTextToSave, stringDetailToSave, 0 );
+
+        SavedTextPreferences.addTask(this, task);
+
+        Intent intent = new Intent(this, TopTasksActivity.class);
+        startActivity(intent);
+
+//        Log.d(" ToDo List:", "Save Button Clicked!");
+//        Log.d(" ToDo List:", " ToDo Task: ' " + taskTextToSave + "'");
+//        Log.d(" ToDo List", "ToDo Detail: ' " + detailTextToSave + "'");
+//        saveButton.setVisibility(View.INVISIBLE);
+//        taskTextToSave.setVisibility(View.INVISIBLE);
+//        detailTextToSave.setVisibility(View.INVISIBLE);
+//        savedTaskText.setVisibility(View.VISIBLE);
+//        savedTaskText.setText(stringTextToSave);
+//        savedDetailText.setVisibility(View.VISIBLE);
+//        savedDetailText.setText(stringDetailToSave);
+//
+//        SavedTextPreferences.setStoredTaskText(this, stringTextToSave);
+//        SavedTextPreferences.setStoredTaskText(this, stringDetailToSave);
 
     }
 

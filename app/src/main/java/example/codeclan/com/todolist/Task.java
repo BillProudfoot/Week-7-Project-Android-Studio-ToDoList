@@ -1,10 +1,12 @@
 package example.codeclan.com.todolist;
 
+import java.io.Serializable;
+
 /**
  * Created by user on 22/04/2017.
  */
 
-public class Task {
+public class Task implements Serializable{
 
     private int priority;
     private String task;

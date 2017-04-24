@@ -7,7 +7,7 @@
 
     <EditText
         android:id="@+id/task_text_to_save"
-        android:hint="Put task here"
+        android:hint="Add task headline here"
         android:textSize="30dp"
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
 
     <EditText
         android:id="@+id/detail_text_to_save"
-        android:hint="Put task detail here"
+        android:hint="Add task detail here"
         android:textSize="30dp"
         android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
