@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         taskTextToSave = (EditText)findViewById(R.id.task_text_to_save);
         detailTextToSave = (EditText)findViewById(R.id.detail_text_to_save);
         saveButton = (Button)findViewById(R.id.save_button);
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         savedTaskText.setVisibility(View.INVISIBLE);
         savedDetailText = (TextView)findViewById(R.id.saved_detail_text);
         savedDetailText.setVisibility(View.INVISIBLE);
-
         String returnedText = SavedTextPreferences.getStoredTaskText(this);
 
         /*if (returnedText != null) {
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if (item.getItemId() == R.id.action_welcome){
-            Toast.makeText(MainActivity.this,"Task updated", Toast.LENGTH_SHORT).show();;
+            Toast.makeText(MainActivity.this,"Going to list", Toast.LENGTH_SHORT).show();;
             return true;
         }
         return super.onOptionsItemSelected(item);

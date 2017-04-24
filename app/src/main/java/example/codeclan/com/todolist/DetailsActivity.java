@@ -12,14 +12,17 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
-public class TopTasksActivity extends AppCompatActivity {
+/**
+ * Created by user on 24/04/2017.
+ */
+
+public class DetailsActivity extends AppCompatActivity {
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tasks_list);
-
+        setContentView(R.layout.details_list);
 
         ArrayList<Task> list = SavedTextPreferences.getTasks(this);
 
@@ -31,29 +34,21 @@ public class TopTasksActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-               String selected = (String)listView.getItemAtPosition(position);
-                Log.d("ListView:", selected + "selected");
+                String selected = (String)listView.getItemAtPosition(position);
             }
         });
-    }
-
-//    private ArrayList<String> setUpStringsList(){
-//
-//    }
-
 
     public void getTask(View listItem) {
         Task task = (Task) listItem.getTag();
-        Log.d(" To Do : ", task.getTask());
-        Log.d(" Detail : ", task.getDetail());
 
         Gson gson = new Gson();
 
-        String taskAsString = gson.toJson(task);
+        String detailAsString = gson.toJson(task);
 
-        Intent intent = new Intent(this, TasksActivity.class); // UPDATED
-        intent.putExtra("task", taskAsString); // UPDATED
+        Intent intent = new Intent(this, TasksActivity.class);
+        intent.putExtra("detail", detailAsString);
 
-        startActivity(intent); // UPDATED
+        startActivity(intent);
     }
+
 }
