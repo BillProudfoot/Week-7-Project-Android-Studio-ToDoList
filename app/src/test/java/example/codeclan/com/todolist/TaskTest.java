@@ -23,7 +23,7 @@ public class TaskTest {
 
     @Test
     public void getToDoTest(){
-        assertEquals("Cut Hedge", task.getTodo());
+        assertEquals("Cut Hedge", task.getTask());
     }
 
     @Test

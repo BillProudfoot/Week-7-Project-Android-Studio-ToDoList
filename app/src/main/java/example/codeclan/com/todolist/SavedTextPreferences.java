@@ -25,4 +25,21 @@ public class SavedTextPreferences {
 
         return sharedPreferences.getString(PREF_SAVEDTASKTEXT, null);
     }
+
+    private static final String PREF_SAVEDDETAILTEXT = "savedDetailText";
+
+    public static void setStoredDetailText(Context context, String text){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(PREF_SAVEDDETAILTEXT,text);
+        editor.apply();
+
+    }
+
+    public static String getStoredDetailText(Context context){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+
+        return sharedPreferences.getString(PREF_SAVEDDETAILTEXT, null);
+    }
 }

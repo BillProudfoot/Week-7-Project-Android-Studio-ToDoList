@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,8 +17,8 @@ import android.widget.Toast;
  */
 
 public class MainActivity extends AppCompatActivity {
-    EditTaskText taskTextToSave;
-    EditDetailText detailTextToSave;
+    EditText taskTextToSave;
+    EditText detailTextToSave;
     Button saveButton;
     TextView savedTaskText;
     TextView savedDetailText;
@@ -27,22 +28,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        taskTextToSave = (EditTaskText)findViewById(R.id.task_text_to_save);
-        detailTextToSave = (EditDetailText)findViewById(R.id.detail_test_to_save);
+        taskTextToSave = (EditText)findViewById(R.id.task_text_to_save);
+        detailTextToSave = (EditText)findViewById(R.id.detail_text_to_save);
         saveButton = (Button)findViewById(R.id.save_button);
         savedTaskText = (TextView)findViewById(R.id.saved_task_text);
+        savedTaskText.setVisibility(View.INVISIBLE);
         savedDetailText = (TextView)findViewById(R.id.saved_detail_text);
+        savedDetailText.setVisibility(View.INVISIBLE);
 
-        String returnedText = SavedTextPreferences.getStoredText(this);
+        String returnedText = SavedTextPreferences.getStoredTaskText(this);
 
         if (returnedText != null) {
             taskTextToSave.setVisibility(View.INVISIBLE);
             detailTextToSave.setVisibility(View.INVISIBLE);
             saveButton.setVisibility(View.INVISIBLE);
             savedTaskText.setVisibility(View.VISIBLE);
-            savedTaskText.setVisibility(View.INVISIBLE);
+            savedTaskText.setText(returnedText);
             savedDetailText.setVisibility(View.VISIBLE);
-            savedDetailText.setDetailText(returnedDetailText);
+            savedDetailText.setText(returnedText);
         }
     }
     @Override
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        if (item.getItemId() == R.id.action_edit_task){
+        if (item.getItemId() == R.id.action_welcome){
             Toast.makeText(MainActivity.this,"Task updated", Toast.LENGTH_SHORT).show();;
             return true;
         }
@@ -62,20 +65,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSaveButtonClick(View view) {
-        String stringTextToSave = taskTextToSave.getText();
-        String stringDetailToSave = detailTextToSave.getText();
+        String stringTextToSave = taskTextToSave.getText().toString();
+        String stringDetailToSave = detailTextToSave.getText().toString();
         Log.d(" ToDo List:", "Save Button Clicked!");
         Log.d(" ToDo List:", " ToDo Task: ' " + taskTextToSave + "'");
+        Log.d(" ToDo List", "ToDo Detail: ' " + detailTextToSave + "'");
+        saveButton.setVisibility(View.INVISIBLE);
         taskTextToSave.setVisibility(View.INVISIBLE);
         detailTextToSave.setVisibility(View.INVISIBLE);
-        saveButton.setVisibility(View.INVISIBLE);
         savedTaskText.setVisibility(View.VISIBLE);
-        savedTaskText.setVisibility(View.VISIBLE);
+        savedTaskText.setText(stringTextToSave);
         savedDetailText.setVisibility(View.VISIBLE);
-        savedDetailText.setDetailText(stringDetailToSave);
+        savedDetailText.setText(stringDetailToSave);
 
-        SavedTextPreferences.setStoredText(this, stringTextToSave);
-        SavedTextPreferences.setStoredText(this, stringDetailToSave);
+        SavedTextPreferences.setStoredTaskText(this, stringTextToSave);
+        SavedTextPreferences.setStoredTaskText(this, stringDetailToSave);
 
     }
+
 }
