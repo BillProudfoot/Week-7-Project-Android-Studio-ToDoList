@@ -23,6 +23,44 @@
         android:layout_height="wrap_content"
         android:text="Update !" />
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Pick Category" />
+
+    <CheckBox
+        android:id="@+id/CheckBox_diy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DIY" />
+
+    <CheckBox
+        android:id="@+id/checkBox_chores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chore" />
+
+    <CheckBox
+        android:id="@+id/checkBox_shopping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shopping" />
+
+    <CheckBox
+        android:id="@+id/checkBox_exercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exercise" />
+
+    <CheckBox
+        android:id="@+id/check_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Other" />
+
     <Button
         android:id="@+id/showtasksbutton"
         android:layout_width="match_parent"
