@@ -17,9 +17,11 @@ import android.widget.Toast;
  */
 
 public class MainActivity extends AppCompatActivity {
+    EditText priorityToSave;
     EditText taskTextToSave;
     EditText detailTextToSave;
     Button saveButton;
+    TextView savedPriorityText;
     TextView savedTaskText;
     TextView savedDetailText;
 
@@ -28,10 +30,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        priorityToSave = (EditText)findViewById(R.id.task_priority_to_save);
         taskTextToSave = (EditText)findViewById(R.id.task_text_to_save);
         detailTextToSave = (EditText)findViewById(R.id.detail_text_to_save);
         saveButton = (Button)findViewById(R.id.save_button);
+        savedPriorityText = (TextView)findViewById(R.id.saved_priority_text);
+        savedPriorityText.setVisibility(View.INVISIBLE);
         savedTaskText = (TextView)findViewById(R.id.saved_task_text);
         savedTaskText.setVisibility(View.INVISIBLE);
         savedDetailText = (TextView)findViewById(R.id.saved_detail_text);
@@ -65,10 +69,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onSaveButtonClick(View view) {
+        String stringPriorityToSave = priorityToSave.getText().toString();
         String stringTextToSave = taskTextToSave.getText().toString();
         String stringDetailToSave = detailTextToSave.getText().toString();
 
-        Task task = new Task(0 , stringTextToSave, stringDetailToSave, 0, false );
+        Task task = new Task(stringPriorityToSave , stringTextToSave, stringDetailToSave, 0, false );
 
         SavedTextPreferences.addTask(this, task);
 

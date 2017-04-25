@@ -8,13 +8,13 @@ import java.io.Serializable;
 
 public class Task implements Serializable{
 
-    private int priority;
+    private String priority;
     private String task;
     private String detail;
     private int image;
     private boolean isDone;
 
-    public Task(Integer priority, String task, String detail, int image, boolean isDone) {
+    public Task(String  priority, String task, String detail, int image, boolean isDone) {
         this.priority = priority;
         this.task = task;
         this.detail = detail;
@@ -22,7 +22,7 @@ public class Task implements Serializable{
         this.isDone = isDone;
     }
 
-    public Integer getPriority(){return priority;}
+    public String getPriority(){return priority;}
     public String getTask() {return task;}
     public String getDetail() {return detail;}
     public int getImage(){return image;}

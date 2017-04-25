@@ -4,6 +4,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/task_priority_to_save"
+        android:hint="Add priority here"
+        android:textSize="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/task_text_to_save"
@@ -29,6 +36,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onSaveButtonClick"/>
+
+    <TextView
+        android:id="@+id/saved_priority_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:text="Saved task will be displayed here ..."/>
+
 
     <TextView
         android:id="@+id/saved_task_text"
