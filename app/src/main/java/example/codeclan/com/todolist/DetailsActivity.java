@@ -20,6 +20,12 @@ import java.util.ArrayList;
 
 public class DetailsActivity extends AppCompatActivity {
     private CheckBox check1;
+    private CheckBox check2;
+    private CheckBox check3;
+    private CheckBox check4;
+    private CheckBox check5;
+    private CheckBox check6;
+    private CheckBox check7;
     private Button button_done_sel;
     ListView listView;
 
@@ -59,6 +65,12 @@ public class DetailsActivity extends AppCompatActivity {
         final SavedTextPreferences savedTextPreferences = new SavedTextPreferences();
         final ArrayList<Task> taskList = savedTextPreferences.getTasks(this);
         check1 = (CheckBox) findViewById(R.id.checkbox_done);
+        check2 = (CheckBox) findViewById(R.id.checkBox_diy);
+        check3 = (CheckBox) findViewById(R.id.checkBox_chore);
+        check4 = (CheckBox) findViewById(R.id.checkBox_shopping);
+        check5 = (CheckBox) findViewById(R.id.checkBox_exercise);
+        check6 = (CheckBox) findViewById(R.id.checkBox_work);
+        check7 = (CheckBox) findViewById(R.id.checkBox_other);
         button_done_sel = (Button) findViewById(R.id.button);
         final Context context = this;
 
@@ -79,7 +91,7 @@ public class DetailsActivity extends AppCompatActivity {
 
                         if (check1.isChecked()) {
                             Task task = gson.fromJson(taskAsString, Task.class);
-//                            taskList.remove(task);
+
                             for(int i = 0; i < taskList.size(); i++){
                                 if(taskList.get(i).getTask().equals(task.getTask())){
                                     taskList.remove(i);
@@ -97,6 +109,12 @@ public class DetailsActivity extends AppCompatActivity {
     }
     public void addListenerToCheckBox(){
         check1 = (CheckBox)findViewById(R.id.checkbox_done);
+        check2 = (CheckBox)findViewById(R.id.checkBox_diy);
+        check3 = (CheckBox)findViewById(R.id.checkBox_chore);
+        check4 = (CheckBox)findViewById(R.id.checkBox_shopping);
+        check5 = (CheckBox)findViewById(R.id.checkBox_exercise);
+        check6 = (CheckBox)findViewById(R.id.checkBox_work);
+        check7 = (CheckBox)findViewById(R.id.checkBox_other);
         check1.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
@@ -108,6 +126,71 @@ public class DetailsActivity extends AppCompatActivity {
                 }
         );
 
+        check2.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View variable){
+                        if(((CheckBox)variable).isChecked()){
+                            Toast.makeText(DetailsActivity.this,"DIY Category is Checked",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
+
+        check3.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View variable){
+                        if(((CheckBox)variable).isChecked()){
+                            Toast.makeText(DetailsActivity.this,"Chore Category is Checked",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
+
+        check4.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View variable){
+                        if(((CheckBox)variable).isChecked()){
+                            Toast.makeText(DetailsActivity.this,"Shopping Category is Checked",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
+
+        check5.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View variable){
+                        if(((CheckBox)variable).isChecked()){
+                            Toast.makeText(DetailsActivity.this,"Exercise Category is Checked",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
+
+        check6.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View variable){
+                        if(((CheckBox)variable).isChecked()){
+                            Toast.makeText(DetailsActivity.this,"Work Category is Checked",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
+
+        check7.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View variable){
+                        if(((CheckBox)variable).isChecked()){
+                            Toast.makeText(DetailsActivity.this,"Other Category is Checked",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
     }
 
 }

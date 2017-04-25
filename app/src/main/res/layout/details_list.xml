@@ -35,17 +35,15 @@
         android:text="Pick Category" />
 
     <CheckBox
-        android:id="@+id/CheckBox_diy"
+        android:id="@+id/checkBox_diy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_weight="50%"
         android:text="DIY" />
 
     <CheckBox
-        android:id="@+id/checkBox_chores"
+        android:id="@+id/checkBox_chore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_weight="50%"
         android:text="Chore" />
 
     <CheckBox
@@ -67,7 +65,7 @@
         android:text="Work" />
 
     <CheckBox
-        android:id="@+id/check_other"
+        android:id="@+id/checkBox_other"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Other" />
