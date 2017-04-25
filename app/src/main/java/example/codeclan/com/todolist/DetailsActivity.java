@@ -1,5 +1,6 @@
 package example.codeclan.com.todolist;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+
+import java.util.ArrayList;
 
 /**
  * Created by user on 24/04/2017.
@@ -52,23 +55,46 @@ public class DetailsActivity extends AppCompatActivity {
 //        });
     }
 
-    public void addListenerOnButton(){
-        check1 = (CheckBox)findViewById(R.id.checkbox_done);
-        button_done_sel =(Button)findViewById(R.id.button);
+    public void addListenerOnButton() {
+        final SavedTextPreferences savedTextPreferences = new SavedTextPreferences();
+        final ArrayList<Task> taskList = savedTextPreferences.getTasks(this);
+        check1 = (CheckBox) findViewById(R.id.checkbox_done);
+        button_done_sel = (Button) findViewById(R.id.button);
+        final Context context = this;
 
         button_done_sel.setOnClickListener(
-                new View.OnClickListener(){
+                new View.OnClickListener() {
                     @Override
-                    public void onClick(View variable){
+                    public void onClick(View variable) {
+
+
                         StringBuffer result = new StringBuffer();
                         result.append("Task : ").append(check1.isChecked());
 
-                        Toast.makeText(DetailsActivity.this,result.toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(DetailsActivity.this, result.toString(), Toast.LENGTH_LONG).show();
+
+                        String taskAsString = getIntent().getExtras().getString("task");
+
+                        Gson gson = new Gson();
+
+                        if (check1.isChecked()) {
+                            Task task = gson.fromJson(taskAsString, Task.class);
+//                            taskList.remove(task);
+                            for(int i = 0; i < taskList.size(); i++){
+                                if(taskList.get(i).getTask().equals(task.getTask())){
+                                    taskList.remove(i);
+                                }
+                            }
+                            task.setToDone();
+                            taskList.add(task);
+                            savedTextPreferences.setTasks(context, taskList);
+                        }
+
                     }
+
                 }
         );
     }
-
     public void addListenerToCheckBox(){
         check1 = (CheckBox)findViewById(R.id.checkbox_done);
         check1.setOnClickListener(
@@ -81,6 +107,7 @@ public class DetailsActivity extends AppCompatActivity {
                     }
                 }
         );
+
     }
 
 }

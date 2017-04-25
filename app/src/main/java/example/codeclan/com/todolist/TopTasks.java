@@ -12,9 +12,9 @@ public class TopTasks {
 
     public TopTasks(){
         list = new ArrayList<Task>();
-        list.add(new Task(1, "wash floors", "Hall and kitchen floors to be vacuumed and washed",R.drawable.chore));
-        list.add(new Task(2, "shopping", "Buy bread, milk and cheese",R.drawable.shopping));
-        list.add(new Task(3, "DIY", "fix shower in bathroom",R.drawable.diy));
+        list.add(new Task(1, "wash floors", "Hall and kitchen floors to be vacuumed and washed",R.drawable.chore, false));
+        list.add(new Task(2, "shopping", "Buy bread, milk and cheese",R.drawable.shopping, false));
+        list.add(new Task(3, "DIY", "fix shower in bathroom",R.drawable.diy, false));
 
     }
 

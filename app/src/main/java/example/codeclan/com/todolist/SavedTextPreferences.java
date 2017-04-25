@@ -51,6 +51,17 @@ public class SavedTextPreferences {
         return allTasks;
     }
 
+    public static void setTasks(Context context, ArrayList<Task> taskList){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        Gson gson = new Gson();
+        String allTaskAsJson = gson.toJson(taskList);
+
+        editor.putString(PREF_SAVEDTASK, allTaskAsJson);
+        editor.apply();
+    }
+
 
     public static String getStoredTaskText(Context context){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);

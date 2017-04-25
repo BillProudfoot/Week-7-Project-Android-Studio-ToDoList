@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         String stringTextToSave = taskTextToSave.getText().toString();
         String stringDetailToSave = detailTextToSave.getText().toString();
 
-        Task task = new Task(0 , stringTextToSave, stringDetailToSave, 0 );
+        Task task = new Task(0 , stringTextToSave, stringDetailToSave, 0, false );
 
         SavedTextPreferences.addTask(this, task);
 

@@ -41,6 +41,9 @@ public class TopTasksAdapter extends ArrayAdapter<Task>{
 
         ImageView myImageView = (ImageView) listItemView.findViewById(R.id.category_art);
         myImageView.setImageResource(currentTask.getImage());
+//
+//        CheckBoxView checked = (CheckBoxView) listItemView.findViewById(R.id.chkbox);
+//        chkbox.setValue(currentTask.getChkbox());
 
         listItemView.setTag(currentTask);
 
