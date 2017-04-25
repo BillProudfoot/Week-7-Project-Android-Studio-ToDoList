@@ -37,8 +37,8 @@ public class TopTasksAdapter extends ArrayAdapter<Task>{
         TextView task = (TextView) listItemView.findViewById(R.id.task);
         task.setText(currentTask.getTask().toString());
 
-        TextView detail = (TextView) listItemView.findViewById(R.id.detail);
-        detail.setText(currentTask.getDetail().toString());
+//        TextView detail = (TextView) listItemView.findViewById(R.id.detail);
+//        detail.setText(currentTask.getDetail().toString());
 
         ImageView myImageView = (ImageView) listItemView.findViewById(R.id.category_art);
         myImageView.setImageResource(currentTask.getImage());
