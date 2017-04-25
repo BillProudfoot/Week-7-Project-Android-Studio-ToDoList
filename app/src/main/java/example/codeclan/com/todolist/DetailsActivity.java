@@ -25,6 +25,8 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details_list);
         addListenerOnButton();
+        addListenerToCheckBox();
+
 
         String taskAsString = getIntent().getExtras().getString("task");
 
@@ -57,7 +59,7 @@ public class DetailsActivity extends AppCompatActivity {
         button_done_sel.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
-                    public void onClick(View view){
+                    public void onClick(View variable){
                         StringBuffer result = new StringBuffer();
                         result.append("Task : ").append(check1.isChecked());
 
@@ -67,5 +69,18 @@ public class DetailsActivity extends AppCompatActivity {
         );
     }
 
+    public void addListenerToCheckBox(){
+        check1 = (CheckBox)findViewById(R.id.checkbox_done);
+        check1.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View variable){
+                        if(((CheckBox)variable).isChecked()){
+                            Toast.makeText(DetailsActivity.this,"Task is Checked done",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
+    }
 
 }
