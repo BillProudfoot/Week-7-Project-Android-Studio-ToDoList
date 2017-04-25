@@ -20,13 +20,6 @@ public class TopTasksActivity extends AppCompatActivity {
         setContentView(R.layout.tasks_list);
 
 
-        ArrayList<Task> list = SavedTextPreferences.getTasks(this);
-
-        TopTasksAdapter tasksAdapter = new TopTasksAdapter(this, list);
-
-        final ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(tasksAdapter);
-
 //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
@@ -40,6 +33,17 @@ public class TopTasksActivity extends AppCompatActivity {
 //
 //    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        ArrayList<Task> list = SavedTextPreferences.getTasks(this);
+
+        TopTasksAdapter tasksAdapter = new TopTasksAdapter(this, list);
+
+        final ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(tasksAdapter);
+    }
 
     public void getTask(View listItem) {
         Task task = (Task) listItem.getTag();
