@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false">
+    android:baselineAligned="false"
+    android:weightSum="1">
 
     <TextView
         android:id="@+id/detail"
@@ -78,12 +79,30 @@
 
         </RadioGroup>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select due data and press commit button"/>
+
+
+    <DatePicker
+        android:id="@+id/Datepick"
+        android:layout_width="612dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/set"
+        android:text="Commit"/>
+
 
     <Button
         android:id="@+id/showtasksbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Go to Tasks List" />
+
 
 
 </LinearLayout>

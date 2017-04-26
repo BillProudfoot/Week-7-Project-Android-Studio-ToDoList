@@ -13,13 +13,15 @@ public class Task implements Serializable{
     private String detail;
     private int image;
     private boolean isDone;
+    private int date;
 
-    public Task(String  priority, String task, String detail, int image, boolean isDone) {
+    public Task(String  priority, String task, String detail, int image, boolean isDone, int date) {
         this.priority = priority;
         this.task = task;
         this.detail = detail;
         this.image = image;
         this.isDone = isDone;
+        this.date = date;
     }
 
     public String getPriority(){return priority;}
@@ -27,9 +29,14 @@ public class Task implements Serializable{
     public String getDetail() {return detail;}
     public int getImage(){return image;}
     public boolean getIsDone(){return isDone;}
+    public int getDate(){return date;}
     public void setToDone(){
         isDone ^= true;
     }
     public void setImage(int diy ) { image = diy; }
+
+    public void setDate(int date) {
+        this.date = date;
+    }
 }
 

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -40,6 +41,7 @@ public class DetailsActivity extends AppCompatActivity {
     private Button button_done_sel;
     ListView listView;
     RadioGroup radioGroup;
+    DatePicker datePicker;
     int checked;
     Image image;
 
@@ -49,6 +51,8 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.details_list);
         addListenerOnButton();
         addListenerToCheckBox();
+        final DatePicker datePicker = (DatePicker) findViewById(R.id.Datepick);
+        final Button button = (Button) findViewById(R.id.set);
 
         String taskAsString = getIntent().getExtras().getString("task");
 
@@ -107,6 +111,12 @@ public class DetailsActivity extends AppCompatActivity {
 
         });
 
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Toast.makeText(DetailsActivity.this, datePicker.getDayOfMonth()+""+datePicker.getMonth()+""+datePicker.getYear(),Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
 
