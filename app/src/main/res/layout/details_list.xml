@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:textColor="#b700ff"
             android:textSize="25dp"
-            android:textStyle="italic"/>
+            android:textStyle="italic"
+            android:layout_marginLeft="20dp"/>
 
         <CheckBox
             android:id="@+id/checkbox_done"
@@ -35,7 +36,8 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update !" />
+            android:text="Update !"
+            android:background="#18ffff"/>
 
         <EditText
             android:id="@+id/editText"
@@ -43,7 +45,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Pick Category" />
+            android:text="Pick Category and click Update button" />
 
 
         <RadioGroup
@@ -94,28 +96,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Go to Tasks List"
-            android:onClick="gotoTaskList"/>
+            android:textSize="15dp"
+            android:onClick="gotoTaskList"
+            android:background="#18ffff"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select due data and press commit button"/>
+            android:text="Select due data and press set button"
+            android:textSize="20dp"/>
+
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/set"
-            android:text="Set" />
-
+            android:text="Set"
+            android:background="#18ffff"
+            android:layout_weight="1" />
 
         <DatePicker
             android:id="@+id/Datepick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
-
-
-
 
 
 

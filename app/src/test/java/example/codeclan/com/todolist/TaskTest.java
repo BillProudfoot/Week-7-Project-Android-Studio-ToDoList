@@ -14,11 +14,11 @@ public class TaskTest {
     Task task;
 
     @Before
-    public void before() { task = new Task(4,"Cut Hedge", "Front hedge needs trimming", R.drawable.chore);}
+    public void before() { task = new Task("High","Cut Hedge", "Front hedge needs trimming", R.drawable.chore, false, "");}
 
     @Test
     public void getPriorityTest(){
-        assertEquals((Integer)4, task.getPriority());
+        assertEquals("High", task.getPriority());
     }
 
     @Test

@@ -119,12 +119,12 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 int day = datePicker.getDayOfMonth();
-                int month = datePicker.getMonth();
+                int month = (datePicker.getMonth() + 1);
                 int year = datePicker.getYear();
                 String dayAsString =  Integer.toString(day);
                 String monthAsString =  Integer.toString(month);
                 String yearAsString =  Integer.toString(year);
-                String date = yearAsString + "/" + "/" + (monthAsString) + "/" + dayAsString;
+                String date = yearAsString + "/" + (monthAsString) + "/" + dayAsString;
                 Toast.makeText(DetailsActivity.this, date,Toast.LENGTH_LONG).show();
 
                 ArrayList<Task> taskList = SavedTextPreferences.getTasks(DetailsActivity.this);
@@ -168,7 +168,6 @@ public class DetailsActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View variable) {
-
 
                         StringBuffer result = new StringBuffer();
                         result.append("Task : ").append(check1.isChecked());
