@@ -1,39 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:baselineAligned="false"
-    android:weightSum="1">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/detail"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#b700ff"
-        android:textSize="25dp"
-        android:textStyle="italic"/>
-
-    <CheckBox
-        android:id="@+id/checkbox_done"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Done  ?" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Update !" />
-
-    <EditText
-        android:id="@+id/editText"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Pick Category" />
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#b700ff"
+            android:textSize="25dp"
+            android:textStyle="italic"/>
+
+        <CheckBox
+            android:id="@+id/checkbox_done"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Done  ?" />
+
+        <CheckBox
+            android:id="@+id/checkbox_delete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete  ?" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update !" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Pick Category" />
 
 
         <RadioGroup
@@ -41,29 +51,29 @@
             android:layout_width="match_parent"
             android:layout_height="200dp">
 
-        <RadioButton
-            android:id="@+id/checkBox_diy"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:text="DIY"/>
+            <RadioButton
+                android:id="@+id/checkBox_diy"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="DIY"/>
 
-        <RadioButton
-            android:id="@+id/checkBox_shopping"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:text="Shopping" />
+            <RadioButton
+                android:id="@+id/checkBox_shopping"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Shopping" />
 
-        <RadioButton
-            android:id="@+id/checkBox_exercise"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:text="Exercise" />
+            <RadioButton
+                android:id="@+id/checkBox_exercise"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Exercise" />
 
-        <RadioButton
-            android:id="@+id/checkBox_other"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:text="Other" />
+            <RadioButton
+                android:id="@+id/checkBox_other"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Other" />
 
             <RadioButton
                 android:id="@+id/checkBox_chore"
@@ -79,30 +89,35 @@
 
         </RadioGroup>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Select due data and press commit button"/>
+        <Button
+            android:id="@+id/button_go_to_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go to Tasks List"
+            android:onClick="gotoTaskList"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select due data and press commit button"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/set"
+            android:text="Set" />
 
 
-    <DatePicker
-        android:id="@+id/Datepick"
-        android:layout_width="612dp"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/set"
-        android:text="Commit"/>
-
-
-    <Button
-        android:id="@+id/showtasksbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Go to Tasks List" />
+        <DatePicker
+            android:id="@+id/Datepick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
 
-</LinearLayout>
+
+
+
+
+    </LinearLayout>
+</ScrollView>

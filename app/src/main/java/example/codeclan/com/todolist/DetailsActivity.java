@@ -38,7 +38,9 @@ public class DetailsActivity extends AppCompatActivity {
     private RadioButton check5;
     private RadioButton check6;
     private RadioButton check7;
+    private CheckBox check8;
     private Button button_done_sel;
+    private Button button_go_to_tasks;
     ListView listView;
     RadioGroup radioGroup;
     DatePicker datePicker;
@@ -52,13 +54,15 @@ public class DetailsActivity extends AppCompatActivity {
         addListenerOnButton();
         addListenerToCheckBox();
         final DatePicker datePicker = (DatePicker) findViewById(R.id.Datepick);
+
+
         final Button button = (Button) findViewById(R.id.set);
 
         String taskAsString = getIntent().getExtras().getString("task");
 
         Gson gson = new Gson();
 
-        Task task = gson.fromJson(taskAsString, Task.class);
+        final Task task = gson.fromJson(taskAsString, Task.class);
 
         TextView textView = (TextView) findViewById(R.id.detail);
 
@@ -114,7 +118,31 @@ public class DetailsActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Toast.makeText(DetailsActivity.this, datePicker.getDayOfMonth()+""+datePicker.getMonth()+""+datePicker.getYear(),Toast.LENGTH_LONG).show();
+                int day = datePicker.getDayOfMonth();
+                int month = datePicker.getMonth();
+                int year = datePicker.getYear();
+                String dayAsString =  Integer.toString(day);
+                String monthAsString =  Integer.toString(month);
+                String yearAsString =  Integer.toString(year);
+                String date = yearAsString + "/" + "/" + (monthAsString) + "/" + dayAsString;
+                Toast.makeText(DetailsActivity.this, date,Toast.LENGTH_LONG).show();
+
+                ArrayList<Task> taskList = SavedTextPreferences.getTasks(DetailsActivity.this);
+
+                task.setDate(date);
+
+//
+                for (int i = 0; i < taskList.size(); i++) {
+                    if (taskList.get(i).getTask().equals(task.getTask())) {
+                        taskList.remove(i);
+                    }
+                }
+
+                taskList.add(task);
+                SavedTextPreferences.setTasks(DetailsActivity.this, taskList);
+//                            task.setDate();
+//                            taskList.add(task);
+//                            savedTextPreferences.setTasks(context, taskList);
             }
         });
     }
@@ -130,8 +158,11 @@ public class DetailsActivity extends AppCompatActivity {
         check5 = (RadioButton) findViewById(R.id.checkBox_exercise);
         check6 = (RadioButton) findViewById(R.id.checkBox_work);
         check7 = (RadioButton) findViewById(R.id.checkBox_other);
+        check8 = (CheckBox) findViewById(R.id.checkbox_delete);
         button_done_sel = (Button) findViewById(R.id.button);
+        button_go_to_tasks = (Button) findViewById(R.id.button_go_to_tasks);
         final Context context = this;
+
 
         button_done_sel.setOnClickListener(
                 new View.OnClickListener() {
@@ -151,8 +182,8 @@ public class DetailsActivity extends AppCompatActivity {
                         if (check1.isChecked()) {
                             Task task = gson.fromJson(taskAsString, Task.class);
 
-                            for(int i = 0; i < taskList.size(); i++){
-                                if(taskList.get(i).getTask().equals(task.getTask())){
+                            for (int i = 0; i < taskList.size(); i++) {
+                                if (taskList.get(i).getTask().equals(task.getTask())) {
                                     taskList.remove(i);
                                 }
                             }
@@ -163,8 +194,8 @@ public class DetailsActivity extends AppCompatActivity {
                         if (check2.isChecked()) {
                             Task task = gson.fromJson(taskAsString, Task.class);
 
-                            for(int i = 0; i < taskList.size(); i++){
-                                if(taskList.get(i).getTask().equals(task.getTask())){
+                            for (int i = 0; i < taskList.size(); i++) {
+                                if (taskList.get(i).getTask().equals(task.getTask())) {
                                     taskList.remove(i);
                                 }
                             }
@@ -175,8 +206,8 @@ public class DetailsActivity extends AppCompatActivity {
                         if (check3.isChecked()) {
                             Task task = gson.fromJson(taskAsString, Task.class);
 
-                            for(int i = 0; i < taskList.size(); i++){
-                                if(taskList.get(i).getTask().equals(task.getTask())){
+                            for (int i = 0; i < taskList.size(); i++) {
+                                if (taskList.get(i).getTask().equals(task.getTask())) {
                                     taskList.remove(i);
                                 }
                             }
@@ -187,8 +218,8 @@ public class DetailsActivity extends AppCompatActivity {
                         if (check4.isChecked()) {
                             Task task = gson.fromJson(taskAsString, Task.class);
 
-                            for(int i = 0; i < taskList.size(); i++){
-                                if(taskList.get(i).getTask().equals(task.getTask())){
+                            for (int i = 0; i < taskList.size(); i++) {
+                                if (taskList.get(i).getTask().equals(task.getTask())) {
                                     taskList.remove(i);
                                 }
                             }
@@ -199,8 +230,8 @@ public class DetailsActivity extends AppCompatActivity {
                         if (check5.isChecked()) {
                             Task task = gson.fromJson(taskAsString, Task.class);
 
-                            for(int i = 0; i < taskList.size(); i++){
-                                if(taskList.get(i).getTask().equals(task.getTask())){
+                            for (int i = 0; i < taskList.size(); i++) {
+                                if (taskList.get(i).getTask().equals(task.getTask())) {
                                     taskList.remove(i);
                                 }
                             }
@@ -211,8 +242,8 @@ public class DetailsActivity extends AppCompatActivity {
                         if (check6.isChecked()) {
                             Task task = gson.fromJson(taskAsString, Task.class);
 
-                            for(int i = 0; i < taskList.size(); i++){
-                                if(taskList.get(i).getTask().equals(task.getTask())){
+                            for (int i = 0; i < taskList.size(); i++) {
+                                if (taskList.get(i).getTask().equals(task.getTask())) {
                                     taskList.remove(i);
                                 }
                             }
@@ -223,8 +254,8 @@ public class DetailsActivity extends AppCompatActivity {
                         if (check7.isChecked()) {
                             Task task = gson.fromJson(taskAsString, Task.class);
 
-                            for(int i = 0; i < taskList.size(); i++){
-                                if(taskList.get(i).getTask().equals(task.getTask())){
+                            for (int i = 0; i < taskList.size(); i++) {
+                                if (taskList.get(i).getTask().equals(task.getTask())) {
                                     taskList.remove(i);
                                 }
                             }
@@ -232,11 +263,36 @@ public class DetailsActivity extends AppCompatActivity {
                             taskList.add(task);
                             savedTextPreferences.setTasks(context, taskList);
                         }
-                    }
+                        if (check8.isChecked()) {
+                            Task task = gson.fromJson(taskAsString, Task.class);
 
-                }
-        );
+                            for (int i = 0; i < taskList.size(); i++) {
+                                if (taskList.get(i).getTask().equals(task.getTask())) {
+                                    taskList.remove(i);
+                                }
+                            }
+                            task.setToDone();
+                            savedTextPreferences.setTasks(context, taskList);
+                        }
+//                        if (check9.isChecked()) {
+//                            Task task = gson.fromJson(taskAsString, Task.class);
+//
+//                            for (int i = 0; i < taskList.size(); i++) {
+//                                if (taskList.get(i).getTask().equals(task.getTask())) {
+//                                    taskList.remove(i);
+//                                }
+//                            }
+//                            task.setDate();
+//                            taskList.add(task);
+//                            savedTextPreferences.setTasks(context, taskList);
+                    }
+                });
     }
+
+    public void gotoTaskList(View view) {
+        this.finish();
+    }
+
     public void addListenerToCheckBox(){
         check1 = (CheckBox) findViewById(R.id.checkbox_done);
 //        check2 = (RadioButton) findViewById(R.id.checkBox_diy);
@@ -255,7 +311,26 @@ public class DetailsActivity extends AppCompatActivity {
                     }
                 }
         );
-
+        check8.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View variable){
+                        if(((CheckBox)variable).isChecked()){
+                            Toast.makeText(DetailsActivity.this,"Task is been deleted !",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+        );
+//        check9.setOnClickListener(
+//                new View.OnClickListener(){
+//                    @Override
+//                    public void onClick(View variable){
+//                        if(((CheckBox)variable).isChecked()){
+//                            Toast.makeText(DetailsActivity.this,"Due date has been set !",Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//                }
+//        );
 //        check2.setOnClickListener(
 //                new View.OnClickListener(){
 //                    @Override

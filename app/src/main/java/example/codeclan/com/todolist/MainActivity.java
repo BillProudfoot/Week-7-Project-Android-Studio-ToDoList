@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TextView savedTaskText;
     TextView savedDetailText;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         String stringTextToSave = taskTextToSave.getText().toString();
         String stringDetailToSave = detailTextToSave.getText().toString();
 
-        Task task = new Task(stringPriorityToSave , stringTextToSave, stringDetailToSave, 0, false, 0 );
+        Task task = new Task(stringPriorityToSave , stringTextToSave, stringDetailToSave, 0, false, "");
 
         SavedTextPreferences.addTask(this, task);
 

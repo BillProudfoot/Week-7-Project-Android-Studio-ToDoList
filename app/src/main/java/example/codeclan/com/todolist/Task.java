@@ -13,9 +13,9 @@ public class Task implements Serializable{
     private String detail;
     private int image;
     private boolean isDone;
-    private int date;
+    private String date;
 
-    public Task(String  priority, String task, String detail, int image, boolean isDone, int date) {
+    public Task(String  priority, String task, String detail, int image, boolean isDone, String date) {
         this.priority = priority;
         this.task = task;
         this.detail = detail;
@@ -29,14 +29,12 @@ public class Task implements Serializable{
     public String getDetail() {return detail;}
     public int getImage(){return image;}
     public boolean getIsDone(){return isDone;}
-    public int getDate(){return date;}
+    public String getDate(){return date;}
     public void setToDone(){
         isDone ^= true;
     }
     public void setImage(int diy ) { image = diy; }
 
-    public void setDate(int date) {
-        this.date = date;
-    }
+    public void setDate(String date){ this.date = date; }
 }
 
