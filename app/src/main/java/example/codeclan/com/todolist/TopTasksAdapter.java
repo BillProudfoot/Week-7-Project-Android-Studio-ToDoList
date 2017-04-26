@@ -41,7 +41,7 @@ public class TopTasksAdapter extends ArrayAdapter<Task>{
         myImageView.setImageResource(currentTask.getImage());
         Switch checked = (Switch) listItemView.findViewById(R.id.isDone);
         checked.setChecked(currentTask.getIsDone());
-        
+
         TextView date = (TextView) listItemView.findViewById(R.id.date);
         date.setText(currentTask.getDate().toString());
 
