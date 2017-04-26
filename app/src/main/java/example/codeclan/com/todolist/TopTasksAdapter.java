@@ -37,19 +37,11 @@ public class TopTasksAdapter extends ArrayAdapter<Task>{
         TextView task = (TextView) listItemView.findViewById(R.id.task);
         task.setText(currentTask.getTask().toString());
 
-//        TextView detail = (TextView) listItemView.findViewById(R.id.detail);
-//
-//        Log.d("ahh", currentTask.getDetail() + "  ");
-//
-//        detail.setText(currentTask.getDetail().toString());
-
         ImageView myImageView = (ImageView) listItemView.findViewById(R.id.category_art);
         myImageView.setImageResource(currentTask.getImage());
-//
         Switch checked = (Switch) listItemView.findViewById(R.id.isDone);
         checked.setChecked(currentTask.getIsDone());
-//        chkbox.setValue(currentTask.getChkbox());
-
+        
         TextView date = (TextView) listItemView.findViewById(R.id.date);
         date.setText(currentTask.getDate().toString());
 

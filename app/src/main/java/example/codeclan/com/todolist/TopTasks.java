@@ -15,7 +15,6 @@ public class TopTasks {
         list.add(new Task("High", "wash floors", "Hall and kitchen floors to be vacuumed and washed",R.drawable.chore, false, ""));
         list.add(new Task("Medium", "shopping", "Buy bread, milk and cheese",R.drawable.shopping, false, ""));
         list.add(new Task("Low", "DIY", "fix shower in bathroom",R.drawable.diy, false, ""));
-
     }
 
     public ArrayList<Task> getList(){ return new ArrayList<Task>(list);}

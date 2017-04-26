@@ -18,20 +18,7 @@ public class TopTasksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tasks_list);
-
-
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-//               String selected = (String)listView.getItemAtPosition(position);
-//                Log.d("ListView:", selected + "selected");
-//            }
-//        });
     }
-
-//    private ArrayList<String> setUpStringsList(){
-//
-//    }
 
     @Override
     public void onResume() {

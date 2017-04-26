@@ -23,9 +23,7 @@ public class SavedTextPreferences {
 
         editor.putString(PREF_SAVEDTASKTEXT,text);
         editor.apply();
-
     }
-
 
     public static void addTask(Context context, Task task){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -62,7 +60,6 @@ public class SavedTextPreferences {
         editor.apply();
     }
 
-
     public static String getStoredTaskText(Context context){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 
@@ -77,7 +74,6 @@ public class SavedTextPreferences {
 
         editor.putString(PREF_SAVEDDETAILTEXT,text);
         editor.apply();
-
     }
 
     public static String getStoredDetailText(Context context){

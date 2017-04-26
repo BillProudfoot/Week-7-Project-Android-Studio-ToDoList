@@ -67,19 +67,6 @@ public class DetailsActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.detail);
 
         textView.setText(task.getDetail());
-//        ArrayList<Task> list = SavedTextPreferences.getTasks(this);
-//
-//        TopTasksAdapter tasksAdapter = new TopTasksAdapter(this, list);
-//
-//        final ListView listView = (ListView) findViewById(R.id.list);
-//        listView.setAdapter(tasksAdapter);
-//
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String selected = (String) listView.getItemAtPosition(position);
-//            }
-//        });
 
         radioGroup = (RadioGroup) findViewById(R.id.radio_group);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -131,7 +118,6 @@ public class DetailsActivity extends AppCompatActivity {
 
                 task.setDate(date);
 
-//
                 for (int i = 0; i < taskList.size(); i++) {
                     if (taskList.get(i).getTask().equals(task.getTask())) {
                         taskList.remove(i);
@@ -140,13 +126,10 @@ public class DetailsActivity extends AppCompatActivity {
 
                 taskList.add(task);
                 SavedTextPreferences.setTasks(DetailsActivity.this, taskList);
-//                            task.setDate();
-//                            taskList.add(task);
-//                            savedTextPreferences.setTasks(context, taskList);
+
             }
         });
     }
-
 
     public void addListenerOnButton() {
         final SavedTextPreferences savedTextPreferences = new SavedTextPreferences();
@@ -273,17 +256,6 @@ public class DetailsActivity extends AppCompatActivity {
                             task.setToDone();
                             savedTextPreferences.setTasks(context, taskList);
                         }
-//                        if (check9.isChecked()) {
-//                            Task task = gson.fromJson(taskAsString, Task.class);
-//
-//                            for (int i = 0; i < taskList.size(); i++) {
-//                                if (taskList.get(i).getTask().equals(task.getTask())) {
-//                                    taskList.remove(i);
-//                                }
-//                            }
-//                            task.setDate();
-//                            taskList.add(task);
-//                            savedTextPreferences.setTasks(context, taskList);
                     }
                 });
     }
@@ -294,12 +266,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     public void addListenerToCheckBox(){
         check1 = (CheckBox) findViewById(R.id.checkbox_done);
-//        check2 = (RadioButton) findViewById(R.id.checkBox_diy);
-//        check3 = (RadioButton) findViewById(R.id.checkBox_chore);
-//        check4 = (RadioButton) findViewById(R.id.checkBox_shopping);
-//        check5 = (RadioButton) findViewById(R.id.checkBox_exercise);
-//        check6 = (RadioButton) findViewById(R.id.checkBox_work);
-//        check7 = (RadioButton) findViewById(R.id.checkBox_other);
+
         check1.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
@@ -320,81 +287,7 @@ public class DetailsActivity extends AppCompatActivity {
                     }
                 }
         );
-//        check9.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View variable){
-//                        if(((CheckBox)variable).isChecked()){
-//                            Toast.makeText(DetailsActivity.this,"Due date has been set !",Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                }
-//        );
-//        check2.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View variable){
-//                        if(((RadioButton)variable).isChecked()){
-//                            Toast.makeText(DetailsActivity.this,"DIY Category has been selected",Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                }
-//        );
-//
-//        check3.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View variable){
-//                        if(((RadioButton)variable).isChecked()){
-//                            Toast.makeText(DetailsActivity.this,"Chore Category has been selected",Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                }
-//        );
-//
-//        check4.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View variable){
-//                        if(((RadioButton)variable).isChecked()){
-//                            Toast.makeText(DetailsActivity.this,"Shopping Category has been selected",Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                }
-//        );
-//
-//        check5.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View variable){
-//                        if(((RadioButton)variable).isChecked()){
-//                            Toast.makeText(DetailsActivity.this,"Exercise Category has been selected",Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                }
-//        );
-//
-//        check6.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View variable){
-//                        if(((RadioButton)variable).isChecked()){
-//                            Toast.makeText(DetailsActivity.this,"Work Category has been selected",Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                }
-//        );
-//
-//        check7.setOnClickListener(
-//                new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View variable){
-//                        if(((RadioButton)variable).isChecked()){
-//                            Toast.makeText(DetailsActivity.this,"Other Category is selected",Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                }
-//        );
+
     }
 
 }
