@@ -34,54 +34,56 @@
         android:inputType="textPersonName"
         android:text="Pick Category" />
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
 
         <RadioButton
             android:id="@+id/checkBox_diy"
-            android:layout_width="match_parent"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:text="DIY" />
-
-        <RadioButton
-            android:id="@+id/checkBox_chore"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Chore" />
+            android:text="DIY"/>
 
         <RadioButton
             android:id="@+id/checkBox_shopping"
-            android:layout_width="match_parent"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:text="Shopping" />
 
         <RadioButton
             android:id="@+id/checkBox_exercise"
-            android:layout_width="match_parent"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:text="Exercise" />
 
         <RadioButton
-            android:id="@+id/checkBox_work"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Work" />
-
-        <RadioButton
             android:id="@+id/checkBox_other"
-            android:layout_width="match_parent"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:text="Other" />
 
-        <Button
-            android:id="@+id/showtasksbutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Go to Tasks List" />
+            <RadioButton
+                android:id="@+id/checkBox_chore"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Chore"/>
 
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/checkBox_work"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Work" />
 
+        </RadioGroup>
+
+
+    <Button
+        android:id="@+id/showtasksbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Tasks List" />
 
 
 </LinearLayout>
