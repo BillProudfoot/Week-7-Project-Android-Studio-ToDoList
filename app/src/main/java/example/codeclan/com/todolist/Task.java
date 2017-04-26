@@ -30,5 +30,6 @@ public class Task implements Serializable{
     public void setToDone(){
         isDone ^= true;
     }
-
+    public void setImage(int diy ) { image = diy; }
 }
+

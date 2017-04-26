@@ -1,6 +1,7 @@
 package example.codeclan.com.todolist;
 
 import android.content.Context;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,13 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+
+import static example.codeclan.com.todolist.R.drawable.chore;
+import static example.codeclan.com.todolist.R.drawable.diy;
+import static example.codeclan.com.todolist.R.drawable.exercise;
+import static example.codeclan.com.todolist.R.drawable.other;
+import static example.codeclan.com.todolist.R.drawable.shopping;
+import static example.codeclan.com.todolist.R.drawable.work;
 
 /**
  * Created by user on 24/04/2017.
@@ -33,6 +41,7 @@ public class DetailsActivity extends AppCompatActivity {
     ListView listView;
     RadioGroup radioGroup;
     int checked;
+    Image image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,21 +110,16 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
     public void addListenerOnButton() {
         final SavedTextPreferences savedTextPreferences = new SavedTextPreferences();
         final ArrayList<Task> taskList = savedTextPreferences.getTasks(this);
         check1 = (CheckBox) findViewById(R.id.checkbox_done);
-//        check2 = (RadioButton) findViewById(R.id.checkBox_diy);
-//        check3 = (RadioButton) findViewById(R.id.checkBox_chore);
-//        check4 = (RadioButton) findViewById(R.id.checkBox_shopping);
-//        check5 = (RadioButton) findViewById(R.id.checkBox_exercise);
-//        check6 = (RadioButton) findViewById(R.id.checkBox_work);
-//        check7 = (RadioButton) findViewById(R.id.checkBox_other);
+        check2 = (RadioButton) findViewById(R.id.checkBox_diy);
+        check3 = (RadioButton) findViewById(R.id.checkBox_chore);
+        check4 = (RadioButton) findViewById(R.id.checkBox_shopping);
+        check5 = (RadioButton) findViewById(R.id.checkBox_exercise);
+        check6 = (RadioButton) findViewById(R.id.checkBox_work);
+        check7 = (RadioButton) findViewById(R.id.checkBox_other);
         button_done_sel = (Button) findViewById(R.id.button);
         final Context context = this;
 
@@ -146,7 +150,78 @@ public class DetailsActivity extends AppCompatActivity {
                             taskList.add(task);
                             savedTextPreferences.setTasks(context, taskList);
                         }
+                        if (check2.isChecked()) {
+                            Task task = gson.fromJson(taskAsString, Task.class);
 
+                            for(int i = 0; i < taskList.size(); i++){
+                                if(taskList.get(i).getTask().equals(task.getTask())){
+                                    taskList.remove(i);
+                                }
+                            }
+                            task.setImage(diy);
+                            taskList.add(task);
+                            savedTextPreferences.setTasks(context, taskList);
+                        }
+                        if (check3.isChecked()) {
+                            Task task = gson.fromJson(taskAsString, Task.class);
+
+                            for(int i = 0; i < taskList.size(); i++){
+                                if(taskList.get(i).getTask().equals(task.getTask())){
+                                    taskList.remove(i);
+                                }
+                            }
+                            task.setImage(chore);
+                            taskList.add(task);
+                            savedTextPreferences.setTasks(context, taskList);
+                        }
+                        if (check4.isChecked()) {
+                            Task task = gson.fromJson(taskAsString, Task.class);
+
+                            for(int i = 0; i < taskList.size(); i++){
+                                if(taskList.get(i).getTask().equals(task.getTask())){
+                                    taskList.remove(i);
+                                }
+                            }
+                            task.setImage(shopping);
+                            taskList.add(task);
+                            savedTextPreferences.setTasks(context, taskList);
+                        }
+                        if (check5.isChecked()) {
+                            Task task = gson.fromJson(taskAsString, Task.class);
+
+                            for(int i = 0; i < taskList.size(); i++){
+                                if(taskList.get(i).getTask().equals(task.getTask())){
+                                    taskList.remove(i);
+                                }
+                            }
+                            task.setImage(exercise);
+                            taskList.add(task);
+                            savedTextPreferences.setTasks(context, taskList);
+                        }
+                        if (check6.isChecked()) {
+                            Task task = gson.fromJson(taskAsString, Task.class);
+
+                            for(int i = 0; i < taskList.size(); i++){
+                                if(taskList.get(i).getTask().equals(task.getTask())){
+                                    taskList.remove(i);
+                                }
+                            }
+                            task.setImage(work);
+                            taskList.add(task);
+                            savedTextPreferences.setTasks(context, taskList);
+                        }
+                        if (check7.isChecked()) {
+                            Task task = gson.fromJson(taskAsString, Task.class);
+
+                            for(int i = 0; i < taskList.size(); i++){
+                                if(taskList.get(i).getTask().equals(task.getTask())){
+                                    taskList.remove(i);
+                                }
+                            }
+                            task.setImage(other);
+                            taskList.add(task);
+                            savedTextPreferences.setTasks(context, taskList);
+                        }
                     }
 
                 }
