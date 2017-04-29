@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -50,44 +52,47 @@
 
         <RadioGroup
             android:id="@+id/radio_group"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
-
-            <RadioButton
-                android:id="@+id/checkBox_diy"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:text="DIY"/>
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
 
             <RadioButton
                 android:id="@+id/checkBox_shopping"
-                android:layout_width="125dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Shopping" />
-
+            
             <RadioButton
                 android:id="@+id/checkBox_exercise"
-                android:layout_width="125dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Exercise" />
 
             <RadioButton
-                android:id="@+id/checkBox_other"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:text="Other" />
-
-            <RadioButton
                 android:id="@+id/checkBox_chore"
-                android:layout_width="125dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Chore"/>
 
             <RadioButton
-                android:id="@+id/checkBox_work"
-                android:layout_width="125dp"
+                android:id="@+id/checkBox_diy"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="DIY"/>
+
+            <RadioButton
+                android:id="@+id/radioButton_work"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="Work" />
+
+            <RadioButton
+                android:id="@+id/checkBox_other"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Other" />
 
         </RadioGroup>
 

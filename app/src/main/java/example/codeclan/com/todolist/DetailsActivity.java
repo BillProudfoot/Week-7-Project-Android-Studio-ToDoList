@@ -68,6 +68,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         textView.setText(task.getDetail());
 
+
         radioGroup = (RadioGroup) findViewById(R.id.radio_group);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
@@ -98,6 +99,7 @@ public class DetailsActivity extends AppCompatActivity {
                         break;
 
                 }
+
             }
 
         });
@@ -139,7 +141,7 @@ public class DetailsActivity extends AppCompatActivity {
         check3 = (RadioButton) findViewById(R.id.checkBox_chore);
         check4 = (RadioButton) findViewById(R.id.checkBox_shopping);
         check5 = (RadioButton) findViewById(R.id.checkBox_exercise);
-        check6 = (RadioButton) findViewById(R.id.checkBox_work);
+        check6 = (RadioButton) findViewById(R.id.radioButton_work);
         check7 = (RadioButton) findViewById(R.id.checkBox_other);
         check8 = (CheckBox) findViewById(R.id.checkbox_delete);
         button_done_sel = (Button) findViewById(R.id.button);
@@ -258,6 +260,7 @@ public class DetailsActivity extends AppCompatActivity {
                         }
                     }
                 });
+
     }
 
     public void gotoTaskList(View view) {
