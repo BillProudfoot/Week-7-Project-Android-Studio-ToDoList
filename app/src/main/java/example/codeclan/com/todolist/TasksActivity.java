@@ -14,7 +14,7 @@ public class TasksActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceBundle) {
         super.onCreate(savedInstanceBundle);
-        setContentView(R.layout.tasks_list);
+        setContentView(R.layout.welcome_page);
 
         Bundle bundle = getIntent().getExtras();
         String taskAsString = bundle.getString("task");

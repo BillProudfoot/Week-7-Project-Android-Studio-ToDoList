@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -19,17 +23,22 @@ public class TopTasksActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tasks_list);
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.activity_main, menu);
+        return true;
+    }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public boolean onOptionsItemSelected(MenuItem item){
+        if (item.getItemId() == R.id.action_welcome){
+            Toast.makeText(TopTasksActivity.this,"Going to list", Toast.LENGTH_SHORT).show();;
+            return true;
 
-        ArrayList<Task> list = SavedTextPreferences.getTasks(this);
+        }
+        return super.onOptionsItemSelected(item);
 
-        TopTasksAdapter tasksAdapter = new TopTasksAdapter(this, list);
-
-        final ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(tasksAdapter);
     }
 
     public void getTask(View listItem) {
@@ -46,4 +55,17 @@ public class TopTasksActivity extends AppCompatActivity {
 
         startActivity(intent); // UPDATED
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        ArrayList<Task> list = SavedTextPreferences.getTasks(this);
+
+        TopTasksAdapter tasksAdapter = new TopTasksAdapter(this, list);
+
+        final ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(tasksAdapter);
+    }
+
 }
