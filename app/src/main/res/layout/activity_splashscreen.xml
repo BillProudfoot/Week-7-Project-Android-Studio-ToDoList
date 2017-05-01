@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="example.codeclan.com.todolist.splashscreen">
+    tools:context="example.codeclan.com.todolist.SplashScreen">
 
         <ImageView
             android:layout_width="match_parent"

@@ -7,24 +7,24 @@
     <EditText
         android:id="@+id/task_priority_to_save"
         android:hint="Add priority here"
-        android:textSize="30dp"
-        android:layout_marginTop="40dp"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/task_text_to_save"
         android:hint="Add task headline here"
-        android:textSize="30dp"
-        android:layout_marginTop="40dp"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/detail_text_to_save"
         android:hint="Add task detail here"
-        android:textSize="30dp"
-        android:layout_marginTop="40dp"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -39,11 +39,25 @@
         android:textSize="20dp"
         android:background="#18ffff"/>
 
+
+    <Button
+        android:id="@+id/button_go_to_tasks"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Go To Tasks List"
+        android:onClick="gotoTaskList"
+        android:background="#18ffff"/>
+
+
+
+
     <TextView
         android:id="@+id/saved_priority_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
+        android:textSize="25dp"
         android:text="Saved task will be displayed here ..."/>
 
 
@@ -51,14 +65,14 @@
         android:id="@+id/saved_task_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
+        android:textSize="25dp"
         android:text="Saved task will be displayed here ..."/>
 
     <TextView
         android:id="@+id/saved_detail_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
+        android:textSize="25dp"
         android:text="Saved detail will be displayed here...."/>
 
 </LinearLayout>

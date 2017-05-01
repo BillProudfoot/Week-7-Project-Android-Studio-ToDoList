@@ -68,4 +68,9 @@ public class TopTasksActivity extends AppCompatActivity {
         listView.setAdapter(tasksAdapter);
     }
 
+    public void gotoTaskList(View view) {
+
+        this.finish();
+    }
+
 }

@@ -11,13 +11,14 @@
         <activity android:name=".DetailsActivity"></activity>
         <activity android:name=".TopTasksActivity"></activity>
         <activity android:name=".TasksActivity"></activity>
-        <activity android:name=".splashscreen">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+
         <activity android:name=".MainActivity"></activity>
     </application>
 
